@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.ComponentModel;
 namespace PaulSound_ToDoList
 {
     /// <summary>
@@ -22,7 +21,7 @@ namespace PaulSound_ToDoList
     {
         public MainWindow()
         {
-            BindingList<object> values = new BindingList<object>();
+            
             InitializeComponent();
         }
     }
