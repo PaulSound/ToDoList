@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PaulSound_ToDoList"
         mc:Ignorable="d"
-        Title="MyToDoList" Height="450" Width="800">
+        Title="MyToDoList" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <DataGrid FontSize="15" FontWeight="Bold" Margin="10">
+        <DataGrid x:Name="dataGridToDo" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Job" IsReadOnly="False" Width="80" Binding="{Binding Path=Job}">
+                <DataGridTextColumn  Header="Job" IsReadOnly="False" Width="80" Binding="{Binding Path=Job}">
                 </DataGridTextColumn>
                 <DataGridCheckBoxColumn Header="Done" IsReadOnly="False" Width="80" Binding="{Binding Path=Done}">
                 </DataGridCheckBoxColumn>
