@@ -9,12 +9,10 @@
     <Grid>
         <DataGrid x:Name="dataGridToDo" FontWeight="Bold" Margin="10" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn  Header="Job" IsReadOnly="False" Width="80" Binding="{Binding Path=Job}">
-                </DataGridTextColumn>
-                <DataGridCheckBoxColumn Header="Done" IsReadOnly="False" Width="80" Binding="{Binding Path=Done}">
-                </DataGridCheckBoxColumn>
-                <DataGridTextColumn Header="Description" IsReadOnly="False" Width="*" Binding="{Binding Path=Desc}" >
-                </DataGridTextColumn>
+                <DataGridTextColumn Header="CreationTime" IsReadOnly="true" Width="100" Binding="{Binding Path=DateCreation}"/>
+                <DataGridTextColumn  Header="Job" IsReadOnly="False" Width="80" Binding="{Binding Path=Job}"/>
+                <DataGridCheckBoxColumn Header="Done" IsReadOnly="False" Width="80"  Binding="{Binding Path=Done,UpdateSourceTrigger=PropertyChanged}"/>
+                <DataGridTextColumn Header="Description" IsReadOnly="False" Width="*" Binding="{Binding Path=Desc}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

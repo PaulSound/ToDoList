@@ -21,15 +21,9 @@ namespace PaulSound_ToDoList
     /// </summary>
     public partial class MainWindow : Window
     {
-        BindingList<DataModel> dataJob=new BindingList<DataModel>()
-        { 
-          new DataModel(){ Job="Wash hair",Done=false,Desc="You should wash your hair"},
-          new DataModel(){Job="Wipe your ass",Done=true,Desc="Ass should be wiped"}
-        
-        };
+        BindingList<DataModel> dataJob=new BindingList<DataModel>();
         public MainWindow()
         {
-            
             InitializeComponent();
         }
 
@@ -42,7 +36,7 @@ namespace PaulSound_ToDoList
 
         private void AddNewJob(object sender, ListChangedEventArgs e)
         {
-            MessageBox.Show(e.ListChangedType.ToString());
+
         }
     }
 }
