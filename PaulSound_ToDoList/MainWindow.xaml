@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PaulSound_ToDoList"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MyToDoList" Height="450" Width="800">
     <Grid>
-        
+        <DataGrid FontSize="15" FontWeight="Bold" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Job" IsReadOnly="False" Width="80">
+                </DataGridTextColumn>
+                <DataGridCheckBoxColumn Header="Done" IsReadOnly="False" Width="80">
+                </DataGridCheckBoxColumn>
+                <DataGridTextColumn Header="Description" IsReadOnly="False" Width="*" >
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
