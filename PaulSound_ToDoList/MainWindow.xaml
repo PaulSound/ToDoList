@@ -9,11 +9,11 @@
     <Grid>
         <DataGrid FontSize="15" FontWeight="Bold" Margin="10">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Job" IsReadOnly="False" Width="80">
+                <DataGridTextColumn Header="Job" IsReadOnly="False" Width="80" Binding="{Binding Path=Job}">
                 </DataGridTextColumn>
-                <DataGridCheckBoxColumn Header="Done" IsReadOnly="False" Width="80">
+                <DataGridCheckBoxColumn Header="Done" IsReadOnly="False" Width="80" Binding="{Binding Path=Done}">
                 </DataGridCheckBoxColumn>
-                <DataGridTextColumn Header="Description" IsReadOnly="False" Width="*" >
+                <DataGridTextColumn Header="Description" IsReadOnly="False" Width="*" Binding="{Binding Path=Desc}" >
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
