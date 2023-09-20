@@ -14,6 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PaulSound_ToDoList.MODEL;
 using System.ComponentModel;
+using System.IO;
+using PaulSound_ToDoList.IOClass;
+
 namespace PaulSound_ToDoList
 {
     /// <summary>
@@ -22,6 +25,8 @@ namespace PaulSound_ToDoList
     public partial class MainWindow : Window
     {
         BindingList<DataModel> dataJob=new BindingList<DataModel>();
+        private readonly string _primaryDirectory=Directory.GetCurrentDirectory()+"\\ToDoData.json";
+        private readonly IOService _service;
         public MainWindow()
         {
             InitializeComponent();
@@ -29,7 +34,7 @@ namespace PaulSound_ToDoList
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-      
+            IOService service = new IOService(_primaryDirectory);
             dataGridToDo.ItemsSource = dataJob; // привязал коллекцию к свойству ItemSource именнованной сетке DateGrid(dataGridToDo)
             dataJob.ListChanged += AddNewJob;
         }
