@@ -54,7 +54,7 @@ namespace PaulSound_ToDoList.MODEL
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-       private void PropChanged(string name="")
+       protected virtual void PropChanged(string name="")
         {
             PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(name));
         }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PaulSound_ToDoList.IOClass
 {
-    internal class IO_Interface
+    public class IO_Interface
     {
 
     }
