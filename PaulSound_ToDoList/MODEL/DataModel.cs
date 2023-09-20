@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PaulSound_ToDoList.IOClass;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -57,6 +58,7 @@ namespace PaulSound_ToDoList.MODEL
        protected virtual void PropChanged(string name="")
         {
             PropertyChanged?.Invoke(this,new PropertyChangedEventArgs(name));
+            
         }
     }
 }

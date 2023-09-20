@@ -32,7 +32,7 @@ namespace PaulSound_ToDoList.IOClass
                 return JsonConvert.DeserializeObject<BindingList<DataModel>>(output);
             }
         }
-        public void SaveData(BindingList<DataModel>list)
+        public void SaveData(object list)
         {
             using (StreamWriter writer=File.CreateText(_path))
             {

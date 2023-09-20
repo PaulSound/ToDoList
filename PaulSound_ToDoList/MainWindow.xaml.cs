@@ -24,9 +24,9 @@ namespace PaulSound_ToDoList
     /// </summary>
     public partial class MainWindow : Window
     {
-        BindingList<DataModel> dataJob=new BindingList<DataModel>();
-        private readonly string _primaryDirectory=Directory.GetCurrentDirectory()+"\\ToDoData.json";
-        private readonly IOService _service;
+        BindingList<DataModel> dataJob;
+        static private readonly string _primaryDirectory= $"{Environment.CurrentDirectory}\\ToDoData.Json";
+        private readonly IOService _service = new IOService(_primaryDirectory);
         public MainWindow()
         {
             InitializeComponent();
@@ -34,14 +34,31 @@ namespace PaulSound_ToDoList
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            IOService service = new IOService(_primaryDirectory);
+
+            try
+            {
+                dataJob = _service.LoadData();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
             dataGridToDo.ItemsSource = dataJob; // привязал коллекцию к свойству ItemSource именнованной сетке DateGrid(dataGridToDo)
             dataJob.ListChanged += AddNewJob;
         }
 
         private void AddNewJob(object sender, ListChangedEventArgs e)
         {
-
+            try
+            {
+                _service.SaveData(sender);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                this.Close();
+            }
         }
     }
 }
